@@ -1,6 +1,7 @@
 import Hero from '@/components/modules/Hero';
 import Services from '@/components/modules/Services';
 import Stats from '@/components/modules/Stats';
+import TopRatedDoctor from '@/components/modules/TopRatedDoctor';
 import AIFeatures from '@/components/shared/AIFeatures/AIFeatures';
 import AISymptomChecker from '@/components/shared/AISymptomChecker/AISymptomChecker';
 
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* Services Section */}
       <Services />
+
+      {/* Top Rated Doctor Section */}
+      <TopRatedDoctor />
     </main>
   );
 }

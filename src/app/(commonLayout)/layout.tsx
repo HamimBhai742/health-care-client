@@ -1,11 +1,15 @@
 import Navbar from '@/components/shared/Navbar/Navbar'
+import Footer from '@/components/shared/Footer/Footer'
 import React from 'react'
 
 export default function CommonLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      {children}
+      <main className="flex-1">
+        {children}
+      </main>
+      <Footer />
     </div>
   )
 }

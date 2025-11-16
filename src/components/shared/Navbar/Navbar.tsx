@@ -144,20 +144,11 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-4">
               <Link
                 href="/login"
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-300"
+                className="flex items-center justify-center space-x-2 w-full bg-linear-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-xl font-medium hover:shadow-xl transition-all duration-300 "
               >
-                Login
+                <span>Login</span>
               </Link>
-              <Link
-                href="/appointment"
-                className="relative bg-linear-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-full font-medium hover:shadow-2xl hover:scale-105 transition-all duration-300 overflow-hidden group"
-              >
-                <span className="relative z-10 flex items-center space-x-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>Book Appointment</span>
-                </span>
-                <div className="absolute inset-0 bg-linear-to-r from-teal-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </Link>
+
             </div>
 
             {/* Mobile Menu Button */}

@@ -1,6 +1,8 @@
 import Hero from '@/components/modules/Hero';
 import Services from '@/components/modules/Services';
 import Stats from '@/components/modules/Stats';
+import AIFeatures from '@/components/shared/AIFeatures/AIFeatures';
+import AISymptomChecker from '@/components/shared/AISymptomChecker/AISymptomChecker';
 
 export default function Home() {
   return (
@@ -10,6 +12,12 @@ export default function Home() {
 
       {/* Stats Section */}
       <Stats />
+
+      {/* AI Features Section */}
+      <AIFeatures />
+
+      {/* AI Symptom Checker */}
+      <AISymptomChecker />
 
       {/* Services Section */}
       <Services />

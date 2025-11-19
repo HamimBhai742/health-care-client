@@ -20,7 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Field, FieldError, FieldGroup, FieldLabel } from '../ui/field';
+import { Field, FieldGroup, FieldLabel } from '../ui/field';
 import { registerPatient } from '@/service/auth/RegisterUser';
 
 const RegisterForm = () => {

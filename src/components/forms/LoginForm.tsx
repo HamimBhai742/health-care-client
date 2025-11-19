@@ -1,126 +1,94 @@
 'use client';
 
-import { useState } from 'react';
+import { useActionState, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Eye, EyeOff, Mail, Shield, LogIn, Fingerprint } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-
-const loginSchema = z.object({
-  email: z.string().email('Please enter a valid email address'),
-  password: z.string().min(1, 'Password is required'),
-});
-
-type LoginFormData = z.infer<typeof loginSchema>;
-
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { loginUser } from '@/service/auth/LoginUser';
+import { Field, FieldGroup, FieldLabel } from '../ui/field';
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const form = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  });
-
-  const onSubmit = async (data: LoginFormData) => {
-    setIsLoading(true);
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Login data:', data);
-      // Handle successful login
-    } catch (error) {
-      console.error('Login error:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
+  const [state, formAction, isPending] = useActionState(loginUser, null);
+  console.log(state);
   return (
-    <Card className="w-full max-w-md mx-auto shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
-      <CardHeader className="space-y-4 pb-8">
-        <div className="flex items-center justify-center  space-x-2">
-          <div className="p-3 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full">
-            <LogIn className="h-6 w-6 text-white" />
+    <Card className='w-full max-w-md mx-auto shadow-2xl border-0 bg-white/95 backdrop-blur-sm'>
+      <CardHeader className='space-y-4 pb-8'>
+        <div className='flex items-center justify-center  space-x-2'>
+          <div className='p-3 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full'>
+            <LogIn className='h-6 w-6 text-white' />
           </div>
         </div>
-        <CardTitle className="text-3xl font-bold text-center bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+        <CardTitle className='text-3xl font-bold text-center bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent'>
           Welcome Back
         </CardTitle>
-        <CardDescription className="text-center text-slate-600 text-lg">
+        <CardDescription className='text-center text-slate-600 text-lg'>
           Sign in to access your healthcare dashboard
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="space-y-6">
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-
+      <CardContent className='space-y-6'>
+        <form action={formAction} className='space-y-6'>
+          <FieldGroup>
             {/* Email Field */}
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-slate-700 font-medium">Email Address</FormLabel>
-                  <FormControl>
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-4 h-4 w-4 text-slate-400" />
-                      <Input
-                        type="email"
-                        placeholder="Enter your email address"
-                        className="pl-10 h-12 border-slate-200 focus:border-blue-400 focus:ring-blue-400"
-                        {...field}
-                      />
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <Field>
+              <FieldLabel className='text-slate-700 font-medium'>
+                Email Address
+              </FieldLabel>
+
+              <div className='relative'>
+                <Mail className='absolute left-3 top-4 h-4 w-4 text-slate-400' />
+                <Input
+                  type='email'
+                  placeholder='Enter your email address'
+                  className='pl-10 h-12 border-slate-200 focus:border-blue-400 focus:ring-blue-400'
+                  name='email'
+                />
+              </div>
+            </Field>
 
             {/* Password Field */}
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-slate-700 font-medium">Password</FormLabel>
-                  <FormControl>
-                    <div className="relative">
-                      <Shield className="absolute left-3 top-4 h-4 w-4 text-slate-400" />
-                      <Input
-                        type={showPassword ? "text" : "password"}
-                        placeholder="Enter your password"
-                        className="pl-10 pr-10 h-12 border-slate-200 focus:border-blue-400 focus:ring-blue-400"
-                        {...field}
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-4 text-slate-400 hover:text-slate-600"
-                      >
-                        {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-                      </button>
-                    </div>
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <Field>
+              <FieldLabel className='text-slate-700 font-medium'>
+                Password
+              </FieldLabel>
+
+              <div className='relative'>
+                <Shield className='absolute left-3 top-4 h-4 w-4 text-slate-400' />
+                <Input
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder='Enter your password'
+                  className='pl-10 pr-10 h-12 border-slate-200 focus:border-blue-400 focus:ring-blue-400'
+                  name='password'
+                />
+                <button
+                  type='button'
+                  onClick={() => setShowPassword(!showPassword)}
+                  className='absolute right-3 top-4 text-slate-400 hover:text-slate-600'
+                >
+                  {showPassword ? (
+                    <EyeOff className='h-4 w-4' />
+                  ) : (
+                    <Eye className='h-4 w-4' />
+                  )}
+                </button>
+              </div>
+            </Field>
 
             {/* Forgot Password Link */}
-            <div className="flex justify-end">
+            <div className='flex justify-end'>
               <a
-                href="/forgot-password"
-                className="text-sm text-blue-600 hover:text-blue-700 font-medium hover:underline"
+                href='/forgot-password'
+                className='text-sm text-blue-600 hover:text-blue-700 font-medium hover:underline'
               >
                 Forgot your password?
               </a>
@@ -128,44 +96,50 @@ const LoginForm = () => {
 
             {/* Submit Button */}
             <Button
-              type="submit"
-              className="w-full h-12 bg-linear-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200"
-              disabled={isLoading}
+              className='w-full h-12 bg-linear-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200'
+              disabled={isPending}
             >
-              {isLoading ? 'Signing In...' : 'Sign In'}
+              {isPending ? 'Signing In...' : 'Sign In'}
             </Button>
+          </FieldGroup>
 
-            {/* Divider */}
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t border-slate-200" />
-              </div>
-              <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-2 text-slate-500">Or continue with</span>
-              </div>
+          {/* Divider */}
+          <div className='relative'>
+            <div className='absolute inset-0 flex items-center'>
+              <span className='w-full border-t border-slate-200' />
             </div>
-
-            {/* Biometric Login */}
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full h-12 border-2 border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200"
-            >
-              <Fingerprint className="h-5 w-5 mr-2 text-slate-600" />
-              <span className="text-slate-700 font-medium">Use Biometric Login</span>
-            </Button>
-
-            {/* Register Link */}
-            <div className="text-center pt-4">
-              <p className="text-slate-600">
-                Don&apos;t have an account?{' '}
-                <a href="/register" className="text-blue-600 hover:text-blue-700 font-medium hover:underline">
-                  Create one here
-                </a>
-              </p>
+            <div className='relative flex justify-center text-xs uppercase'>
+              <span className='bg-white px-2 text-slate-500'>
+                Or continue with
+              </span>
             </div>
-          </form>
-        </Form>
+          </div>
+
+          {/* Biometric Login */}
+          <Button
+            type='button'
+            variant='outline'
+            className='w-full h-12 border-2 border-slate-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-200'
+          >
+            <Fingerprint className='h-5 w-5 mr-2 text-slate-600' />
+            <span className='text-slate-700 font-medium'>
+              Use Biometric Login
+            </span>
+          </Button>
+
+          {/* Register Link */}
+          <div className='text-center pt-4'>
+            <p className='text-slate-600'>
+              Don&apos;t have an account?{' '}
+              <a
+                href='/register'
+                className='text-blue-600 hover:text-blue-700 font-medium hover:underline'
+              >
+                Create one here
+              </a>
+            </p>
+          </div>
+        </form>
       </CardContent>
     </Card>
   );

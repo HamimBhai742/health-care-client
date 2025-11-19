@@ -20,6 +20,6 @@ export const registerPatient = async (currentstate:any, formData:any) => {
 
     return res;
   } catch (error) {
-    return { message: error };
+    return { error: error };
   }
 };

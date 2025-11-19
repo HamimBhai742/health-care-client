@@ -46,7 +46,7 @@ const LoginForm = () => {
   return (
     <Card className="w-full max-w-md mx-auto shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
       <CardHeader className="space-y-4 pb-8">
-        <div className="flex items-center justify-centerlinear space-x-2">
+        <div className="flex items-center justify-center  space-x-2">
           <div className="p-3 bg-linear-to-r from-blue-500 to-cyan-500 rounded-full">
             <LogIn className="h-6 w-6 text-white" />
           </div>

@@ -21,17 +21,12 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Field, FieldError, FieldGroup, FieldLabel } from '../ui/field';
+import { registerPatient } from '@/service/auth/RegisterUser';
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [state, formAction, isPending] = useActionState(
-    (currentState: any, formData: any) => {
-      console.log(formData.get('email'), currentState);
-      return { success: true };
-    },
-    null
-  );
+  const [state, formAction, isPending] = useActionState(registerPatient, null);
   console.log(state);
   return (
     <Card className='w-full max-w-2xl mx-auto shadow-2xl border-0 bg-white/95 backdrop-blur-sm'>

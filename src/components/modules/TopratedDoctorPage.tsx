@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, Filter, Search, Users, Award, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Filter, Users, Award, Star } from 'lucide-react';
 import DoctorCard from '@/components/ui/DoctorCard';
 import { mockDoctors } from '@/json/topRatedDoctor';
 

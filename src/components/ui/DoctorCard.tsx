@@ -25,12 +25,12 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
     <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-100 hover:border-blue-200 hover:-translate-y-2">
       {/* Doctor Image */}
       <div className="relative overflow-hidden">
-        <div className="aspect-[4/3] bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+        <div className="aspect-4/3 bg-linear-to-br from-blue-50 to-cyan-50 flex items-center justify-center">
+          <div className="w-24 h-24 bg-linear-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-white text-2xl font-bold">
             {doctor.name.split(' ').map(n => n[0]).join('')}
           </div>
         </div>
-        
+
         {/* Verified Badge */}
         {doctor.verified && (
           <div className="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center space-x-1">
@@ -38,7 +38,7 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
             <span>Verified</span>
           </div>
         )}
-        
+
         {/* Rating Badge */}
         <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full flex items-center space-x-1">
           <Star className="h-4 w-4 text-yellow-400 fill-current" />
@@ -84,7 +84,7 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
 
         {/* Action Buttons */}
         <div className="flex space-x-3">
-          <button className="flex-1 bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-2.5 px-4 rounded-xl font-medium hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 flex items-center justify-center space-x-2">
+          <button className="flex-1 bg-linear-to-r from-blue-500 to-cyan-500 text-white py-2.5 px-4 rounded-xl font-medium hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 flex items-center justify-center space-x-2">
             <Calendar className="h-4 w-4" />
             <span>Book Now</span>
           </button>

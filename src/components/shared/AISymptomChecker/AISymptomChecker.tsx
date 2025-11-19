@@ -28,7 +28,7 @@ const AISymptomChecker = () => {
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl p-8 shadow-xl">
+        <div className="bg-linear-to-br from-purple-50 to-blue-50 rounded-3xl p-8 shadow-xl">
           {/* Input Section */}
           <div className="mb-8">
             <label className="block text-sm font-medium text-gray-700 mb-3">
@@ -53,7 +53,7 @@ const AISymptomChecker = () => {
             <button
               onClick={handleAnalyze}
               disabled={!symptoms.trim() || isAnalyzing}
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 mx-auto"
+              className="bg-linear-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2 mx-auto"
             >
               {isAnalyzing ? (
                 <>
@@ -147,7 +147,7 @@ const AISymptomChecker = () => {
           {/* Disclaimer */}
           <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
             <p className="text-sm text-gray-600 text-center">
-              <strong>Disclaimer:</strong> This AI analysis is for informational purposes only and should not replace professional medical advice. 
+              <strong>Disclaimer:</strong> This AI analysis is for informational purposes only and should not replace professional medical advice.
               Always consult with a healthcare provider for proper diagnosis and treatment.
             </p>
           </div>

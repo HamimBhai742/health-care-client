@@ -11,7 +11,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { loginUser } from '@/service/auth/LoginUser';
-import { Field, FieldGroup, FieldLabel } from '../ui/field';
+import { Field, FieldDescription, FieldGroup, FieldLabel } from '../ui/field';
+import { loginFormError } from '@/error/login.form.error';
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [state, formAction, isPending] = useActionState(loginUser, null);
@@ -50,6 +51,11 @@ const LoginForm = () => {
                   name='email'
                 />
               </div>
+              {loginFormError('email', state) && (
+                <FieldDescription className='text-red-600 mt-1'>
+                  {loginFormError('email', state)}
+                </FieldDescription>
+              )}
             </Field>
 
             {/* Password Field */}
@@ -78,6 +84,11 @@ const LoginForm = () => {
                   )}
                 </button>
               </div>
+              {loginFormError('password', state) && (
+                <FieldDescription className='text-red-600 mt-1'>
+                  {loginFormError('password', state)}
+                </FieldDescription>
+              )}
             </Field>
 
             {/* Forgot Password Link */}

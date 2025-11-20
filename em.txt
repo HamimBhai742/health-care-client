@@ -1,3 +1,3 @@
- Now you focus about page (commonLayout)/about/page.tsx and implement About page design. breck this into task then breck task into subtask then implement subtask one by one .desing must be unique and mordern best design latest moedern design for healthcare  resposive for all devices ,using(nexjs+talwind css) and  my project Health Care Forntend desing follow my command
+ Now you focus contact page (commonLayout)/contact/page.tsx and implement Contact page design. breck this into task then breck task into subtask then implement subtask one by one .desing must be unique and mordern best design latest moedern design for healthcare  resposive for all devices ,using(nexjs+talwind css) and  my project Health Care Forntend desing follow my command
 
   no use "use client" in /page.tsx

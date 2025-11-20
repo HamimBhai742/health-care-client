@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import NavLink from 'next/link';
 import {
   Menu,
   X,
@@ -101,7 +102,7 @@ const Navbar = () => {
                   onMouseEnter={() => item.dropdown && setActiveDropdown(item.label)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <Link
+                  <NavLink
                     href={item.href}
                     className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium transition-all duration-300 group py-2"
                   >
@@ -111,7 +112,7 @@ const Navbar = () => {
                         activeDropdown === item.label ? 'rotate-180' : ''
                       }`} />
                     )}
-                  </Link>
+                  </NavLink>
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-blue-600 to-teal-500 group-hover:w-full transition-all duration-500"></span>
 
                   {/* Dropdown Menu */}

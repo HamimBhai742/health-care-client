@@ -14,17 +14,17 @@ type State = {
 
 async function forgotPasswordAction(prevState: State, formData: FormData): Promise<State> {
   const email = formData.get("email") as string;
-  
+
   if (!email || !email.includes("@")) {
     return { error: "Please enter a valid email address" };
   }
 
   // TODO: Implement forgot password API call
   console.log("Forgot password request:", email);
-  
+
   // Simulate API delay
   await new Promise(resolve => setTimeout(resolve, 1000));
-  
+
   return { success: true };
 }
 
@@ -42,11 +42,11 @@ export default function ForgotPasswordForm() {
             <div className="space-y-2">
               <h1 className="text-2xl font-bold text-gray-900">Check Your Email</h1>
               <p className="text-gray-600">
-                We've sent password reset instructions to your email address.
+                We&apos;ve sent password reset instructions to your email address.
               </p>
             </div>
-            <Link 
-              href="/login" 
+            <Link
+              href="/login"
               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -67,7 +67,7 @@ export default function ForgotPasswordForm() {
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Forgot Password</h1>
           <p className="text-gray-600">
-            Enter your email address and we'll send you a link to reset your password.
+            Enter your email address and we&apos;ll send you a link to reset your password.
           </p>
         </div>
 
@@ -90,9 +90,9 @@ export default function ForgotPasswordForm() {
             )}
           </div>
 
-          <Button 
-            type="submit" 
-            className="w-full h-12 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" 
+          <Button
+            type="submit"
+            className="w-full h-12 bg-linear-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
             disabled={isPending}
           >
             {isPending ? (
@@ -107,8 +107,8 @@ export default function ForgotPasswordForm() {
         </form>
 
         <div className="text-center mt-6">
-          <Link 
-            href="/login" 
+          <Link
+            href="/login"
             className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 font-medium transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />

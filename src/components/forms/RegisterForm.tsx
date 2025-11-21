@@ -19,8 +19,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Field, FieldGroup, FieldLabel } from '../ui/field';
+import { Field, FieldDescription, FieldGroup, FieldLabel } from '../ui/field';
 import { registerPatient } from '@/service/auth/RegisterUser';
+import { formError } from '@/error/form.error';
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -60,9 +61,14 @@ const RegisterForm = () => {
                     className='pl-10 h-12 border-slate-200 focus:border-blue-400 focus:ring-blue-400'
                     name='name'
                     type='text'
-                    required
+                    
                   />
                 </div>
+                {formError('name', state) && (
+                  <FieldDescription className='text-red-600 mt-1'>
+                    {formError('name', state)}
+                  </FieldDescription>
+                )}
               </Field>
 
               {/* Email Field */}
@@ -80,6 +86,11 @@ const RegisterForm = () => {
                     name='email'
                   />
                 </div>
+                {formError('email', state) && (
+                  <FieldDescription className='text-red-600 mt-1'>
+                    {formError('email', state)}
+                  </FieldDescription>
+                )}
               </Field>
             </div>
 
@@ -161,6 +172,11 @@ const RegisterForm = () => {
                     )}
                   </button>
                 </div>
+                {formError('password', state) && (
+                  <FieldDescription className='text-red-600 mt-1'>
+                    {formError('password', state)}
+                  </FieldDescription>
+                )}
               </Field>
 
               <Field>
@@ -174,6 +190,7 @@ const RegisterForm = () => {
                     type={showConfirmPassword ? 'text' : 'password'}
                     placeholder='Confirm your password'
                     className='pl-10 pr-10 h-12 border-slate-200 focus:border-blue-400 focus:ring-blue-400'
+                    name='confirmPassword'
                   />
                   <button
                     type='button'
@@ -187,6 +204,11 @@ const RegisterForm = () => {
                     )}
                   </button>
                 </div>
+                {formError('confirmPassword', state) && (
+                  <FieldDescription className='text-red-600 mt-1'>
+                    {formError('confirmPassword', state)}
+                  </FieldDescription>
+                )}
               </Field>
             </div>
 

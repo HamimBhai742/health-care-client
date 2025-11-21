@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export const loginFormError = (filed: string, state: any | null) => {
+export const formError = (filed: string, state: any | null) => {
   if (state && state.errors) {
     return state.errors.find((error: any) => error.field === filed)?.message;
   } else {

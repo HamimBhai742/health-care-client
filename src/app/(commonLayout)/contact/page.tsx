@@ -1,24 +1,23 @@
-import React from 'react';
 import { Phone, Mail, MapPin, Clock, MessageCircle, HeartHandshake } from 'lucide-react';
 
 const ContactPage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 via-white to-green-50 py-20 px-4">
+      <section className="relative bg-linear-to-br from-blue-50 via-white to-green-50 py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
               Get in
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600"> Touch</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-green-600"> Touch</span>
               <br />with Our Team
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              We're here to help you with all your healthcare needs. Reach out to us anytime 
+              We&apos;re here to help you with all your healthcare needs. Reach out to us anytime
               for appointments, inquiries, or emergency assistance.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
@@ -28,7 +27,7 @@ const ContactPage = () => {
               <p className="text-gray-600 text-sm mb-2">+1 (555) 123-4567</p>
               <p className="text-gray-500 text-xs">24/7 Emergency Line</p>
             </div>
-            
+
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
                 <Mail className="w-6 h-6 text-green-600" />
@@ -37,7 +36,7 @@ const ContactPage = () => {
               <p className="text-gray-600 text-sm mb-2">info@healthcare.com</p>
               <p className="text-gray-500 text-xs">Response within 2 hours</p>
             </div>
-            
+
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                 <MapPin className="w-6 h-6 text-purple-600" />
@@ -46,7 +45,7 @@ const ContactPage = () => {
               <p className="text-gray-600 text-sm mb-2">123 Health St, Medical City</p>
               <p className="text-gray-500 text-xs">Multiple locations</p>
             </div>
-            
+
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
                 <Clock className="w-6 h-6 text-red-600" />
@@ -69,14 +68,14 @@ const ContactPage = () => {
                   Send Us a Message
                 </h2>
                 <p className="text-xl text-gray-600">
-                  Have questions about our services? Need to schedule an appointment? 
-                  We're here to help you every step of the way.
+                  Have questions about our services? Need to schedule an appointment?
+                  We&apos;re here to help you every step of the way.
                 </p>
               </div>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center shrink-0 mt-1">
                     <MessageCircle className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
@@ -84,9 +83,9 @@ const ContactPage = () => {
                     <p className="text-gray-600 text-sm">We typically respond to all inquiries within 2 hours during business hours.</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center shrink-0 mt-1">
                     <HeartHandshake className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
@@ -96,8 +95,8 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-3xl p-8 shadow-xl">
+
+            <div className="bg-linear-to-br from-blue-50 to-green-50 rounded-3xl p-8 shadow-xl">
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -117,7 +116,7 @@ const ContactPage = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
                   <input
@@ -126,7 +125,7 @@ const ContactPage = () => {
                     placeholder="Enter your email"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
                   <input
@@ -135,7 +134,7 @@ const ContactPage = () => {
                     placeholder="Enter your phone number"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
                   <select className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200">
@@ -146,7 +145,7 @@ const ContactPage = () => {
                     <option>Feedback</option>
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                   <textarea
@@ -155,10 +154,10 @@ const ContactPage = () => {
                     placeholder="Tell us how we can help you..."
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  className="w-full bg-linear-to-r from-blue-600 to-green-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-green-700 transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
                   Send Message
                 </button>
@@ -169,7 +168,7 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 px-4 bg-linear-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -179,7 +178,7 @@ const ContactPage = () => {
               Choose the most convenient way to connect with our healthcare team.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -195,7 +194,7 @@ const ContactPage = () => {
                 Call Now
               </button>
             </div>
-            
+
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Mail className="w-8 h-8 text-green-600" />
@@ -210,7 +209,7 @@ const ContactPage = () => {
                 Send Email
               </button>
             </div>
-            
+
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <MessageCircle className="w-8 h-8 text-purple-600" />
@@ -240,9 +239,9 @@ const ContactPage = () => {
               Find the healthcare facility nearest to you with convenient access and ample parking.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+            <div className="bg-linear-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
               <div className="flex items-center gap-3 mb-4">
                 <MapPin className="w-6 h-6 text-blue-600" />
                 <h3 className="text-lg font-bold text-gray-900">Main Campus</h3>
@@ -261,8 +260,8 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
+
+            <div className="bg-linear-to-br from-green-50 to-green-100 rounded-2xl p-6 border border-green-200">
               <div className="flex items-center gap-3 mb-4">
                 <MapPin className="w-6 h-6 text-green-600" />
                 <h3 className="text-lg font-bold text-gray-900">North Branch</h3>
@@ -281,8 +280,8 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
+
+            <div className="bg-linear-to-br from-purple-50 to-purple-100 rounded-2xl p-6 border border-purple-200">
               <div className="flex items-center gap-3 mb-4">
                 <MapPin className="w-6 h-6 text-purple-600" />
                 <h3 className="text-lg font-bold text-gray-900">South Clinic</h3>
@@ -306,17 +305,17 @@ const ContactPage = () => {
       </section>
 
       {/* Emergency Contact Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-red-600 to-pink-600">
+      <section className="py-20 px-4 bg-linear-to-r from-red-600 to-pink-600">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Emergency? We're Here 24/7
+              Emergency? We&apos;re Here 24/7
             </h2>
             <p className="text-xl text-red-100 mb-8 max-w-3xl mx-auto">
-              For life-threatening emergencies, don't hesitate to contact us immediately. 
+              For life-threatening emergencies, don&apos;t hesitate to contact us immediately.
               Our emergency team is always ready to provide immediate medical assistance.
             </p>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
                 <Phone className="w-8 h-8 text-white mx-auto mb-3" />
@@ -324,14 +323,14 @@ const ContactPage = () => {
                 <p className="text-red-100 text-2xl font-bold mb-2">911</p>
                 <p className="text-red-100 text-sm">Life-threatening emergencies</p>
               </div>
-              
+
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
                 <Phone className="w-8 h-8 text-white mx-auto mb-3" />
                 <h3 className="text-lg font-bold text-white mb-2">Hospital Direct</h3>
                 <p className="text-red-100 text-xl font-bold mb-2">+1 (555) 911-0000</p>
                 <p className="text-red-100 text-sm">Direct to emergency room</p>
               </div>
-              
+
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center md:col-span-2 lg:col-span-1">
                 <MessageCircle className="w-8 h-8 text-white mx-auto mb-3" />
                 <h3 className="text-lg font-bold text-white mb-2">Urgent Care Chat</h3>
@@ -339,7 +338,7 @@ const ContactPage = () => {
                 <p className="text-red-100 text-sm">Non-emergency urgent care</p>
               </div>
             </div>
-            
+
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-red-600 font-bold py-3 px-8 rounded-xl hover:bg-red-50 transition-all duration-200 shadow-lg">
                 Call Emergency Line

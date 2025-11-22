@@ -6,8 +6,8 @@ import { parse } from 'cookie';
 import { cookies } from 'next/headers';
 export const loginUser = async (currentState: any, formData: any) => {
   try {
-    let accessTokenObj: Record<string, any> | null = null;
-    let refreshTokenObj: Record<string, any> | null = null;
+    let accessTokenObj = null;
+    let refreshTokenObj = null;
     const loginData = {
       email: formData.get('email'),
       password: formData.get('password'),
